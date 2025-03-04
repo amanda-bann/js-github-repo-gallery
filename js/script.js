@@ -34,14 +34,24 @@ const showUserData = function (profile) {
     </div>
     `;
     overview.append(div);
+    getGitRepos();
 };
 
-// Fetch repos
+// Function to fetch repos from github by usernam and sort by creation date (preferrable to updated date)
 const getGitRepos = async function () {
     const gitRepoData = await fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=100`);
     const gitRepos = await gitRepoData.json();
     console.log(gitRepos);
+    displayRepos(gitRepos);
 };
 
-
+// Function to display the list of the user's public github repositories
+const displayRepos = function (repos) {
+    for (const repo of repos){
+        const repoListItem = document.createElement("li");
+        repoListItem.classList.add("repo");
+        repoListItem.innerHTML = `<h3>${repo.name}</h3>`;
+        repoList.append(repoListItem);
+    }
+};
 
