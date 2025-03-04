@@ -2,6 +2,10 @@
 const overview = document.querySelector(".overview");
 // Select the username element
 const username = "amanda-bann";
+// Select the unordered list to display the repos list
+const repoList = document.querySelector(".repo-list");
+
+
 
 // Function to fetch GitHub profile data
 const getGitProfile = async function () {
@@ -31,3 +35,13 @@ const showUserData = function (profile) {
     `;
     overview.append(div);
 };
+
+// Fetch repos
+const getGitRepos = async function () {
+    const gitRepoData = await fetch(`https://api.github.com/users/${username}/repos?sort=created&per_page=100`);
+    const gitRepos = await gitRepoData.json();
+    console.log(gitRepos);
+};
+
+
+
