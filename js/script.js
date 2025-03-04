@@ -9,6 +9,7 @@ const getGitProfile = async function () {
     const profile = await userData.json();
     console.log(profile);
     // return profile;
+    showUserData(profile);
 };
 
 getGitProfile();
@@ -19,13 +20,13 @@ const showUserData = function (profile) {
     div.classList.add("user-info");
     div.innerHTML = `
     <figure>
-      < img alt="user avatar" src=${data.avatar_url} />
+      <img alt="user avatar" src=${profile.avatar_url} />
     </figure>
     <div>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Bio:</strong> ${data.bio}</p>
-        <p><strong>Location:</strong> ${data.location}</p>
-        <p><strong>Number of public repos:</strong> ${data.repo_urls}</p>
+        <p><strong>Name:</strong> ${profile.name}</p>
+        <p><strong>Bio:</strong> ${profile.bio}</p>
+        <p><strong>Location:</strong> ${profile.location}</p>
+        <p><strong>Number of public repos:</strong> ${profile.public_repos}</p>
     </div>
     `;
     overview.append(div);
