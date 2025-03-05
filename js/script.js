@@ -4,7 +4,10 @@ const overview = document.querySelector(".overview");
 const username = "amanda-bann";
 // Select the unordered list to display the repos list
 const repoList = document.querySelector(".repo-list");
-
+// Select the "repos" div
+const repos = document.querySelector(".repos");
+// Select the "repo-data" div
+const repoData = document.querySelector(".repo-data");
 
 
 // Function to fetch GitHub profile data
@@ -54,4 +57,12 @@ const displayRepos = function (repos) {
         repoList.append(repoListItem);
     }
 };
+
+// Add a click event to the unordered list with a class of "repo-list"
+repoList.addEventListener ("click", function (e) {
+    if (e.target.matches("h3")) {
+        const repoName = e.target.innerText;
+        console.log(repoName);
+        };
+});
 
