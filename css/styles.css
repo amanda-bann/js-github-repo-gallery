@@ -11,6 +11,7 @@ body {
     background-color: #aafaf1;
     color: #333;
     font-size: 16px;
+    font-weight: 700;
 }
 
 .hide {
@@ -145,7 +146,7 @@ ul {
     margin-top: 1em;
     padding: 1em;
     margin-bottom: 1em;
-    border: 2px solid #483978;
+    border: 2px solid #000000;
 }
 
 section.repo-data {
@@ -204,19 +205,19 @@ section.repo-data {
 
 .repo-data .visit {
     text-decoration: none;
-    max-width: 200px;
-    color: #fff;
+    max-width: 250px;
+    color: #17f443;
     padding: 0.75em;
     margin-top: 2em;
     cursor: pointer;
     display: block;
-    background-color: #483978;
-    border: 1px solid #483978;
+    background-color: #000000;
+    border: 3px solid #f739cb;
 }
 
 .repo-data .visit:hover {
-    background-color: #2f2550;
-    border: 1px solid #ccc;
+    background-color: #f739cb;
+    border: 3px solid #000000;
 }
 
 .button-container {
